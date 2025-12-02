@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className='hidden lg:flex gap-8 h-full items-center'>
 
                 {/* Products Dropdown */}
-                <DropdownMenu>
+                {/* <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <div className='flex items-center h-full hover:cursor-pointer gap-2'>
                             Products
@@ -69,7 +69,6 @@ export default function Navbar() {
                             <DropdownMenuSubTrigger>Fire Rated Doors</DropdownMenuSubTrigger>
                             <DropdownMenuPortal>
                                 <DropdownMenuSubContent className="w-44">
-                                    {/* <DropdownMenuItem>Wooden</DropdownMenuItem> */}
                                     <DropdownMenuLabel className='font-bold'>Wooden</DropdownMenuLabel>
                                     <DropdownMenuGroup>
                                         <DropdownMenuItem asChild>
@@ -82,7 +81,6 @@ export default function Navbar() {
                                             <Link href="/products?category=Fire+Rated+Doors&subCategory=Wooden&subSubCategory=Paint+Finish">Paint Finish</Link>
                                         </DropdownMenuItem>
                                     </DropdownMenuGroup>
-                                    {/* <DropdownMenuItem>Steel</DropdownMenuItem> */}
                                     <DropdownMenuLabel className='font-bold'>Steel</DropdownMenuLabel>
                                     <DropdownMenuGroup>
                                         <DropdownMenuItem asChild>
@@ -162,9 +160,8 @@ export default function Navbar() {
                                 </DropdownMenuSubContent>
                             </DropdownMenuPortal>
                         </DropdownMenuSub>
-                        {/* <DropdownMenuItem>All</DropdownMenuItem> */}
                     </DropdownMenuContent>
-                </DropdownMenu>
+                </DropdownMenu> */}
 
 
                 {/* <Link href="/infrastructure" className={linkClass('/infrastructure')}>

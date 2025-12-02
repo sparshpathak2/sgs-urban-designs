@@ -86,12 +86,8 @@ export default function Footer() {
                         <div className='font-semibold'>Important Links</div>
                         <div className='flex flex-col gap-1 text-sm'>
                             {/* <a href='/about-us'>About Us</a> */}
-                            <a href='/products'>Products</a>
-                            <a href='/infrastructure'>Infrastructure</a>
                             <a href='/about-us'>About us</a>
                             <a href='/contact-us'>Contact Us</a>
-                            {/* <a href='terms-and-conditions'>Terms & Conditions</a> */}
-                            {/* <a href='privacy-policy'>Privacy Policy</a> */}
                         </div>
                     </div>
 

@@ -1,10 +1,10 @@
 'use client'
 
 import FAQs from "@/components/FAQs";
-import HeroCarousel from "@/components/HeroCarousel2";
+import HeroCarousel from "@/components/HeroCarousel3";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
-import { IconArrowsMaximize, IconBrandSpeedtest, IconBrush, IconBugOff, IconCar, IconCarSuv, IconEngine, IconFlameOff, IconFlare, IconGasStation, IconHammerOff, IconIcons, IconLeaf2, IconLock, IconLockAccess, IconPlant, IconShieldCheck, IconSquaresSelected } from "@tabler/icons-react";
+import { IconArrowAutofitDown, IconArrowsMaximize, IconBoxMultiple, IconBrandSpeedtest, IconBrush, IconBugOff, IconCar, IconCarSuv, IconDiamond, IconDroplets, IconEngine, IconFlameOff, IconFlare, IconGasStation, IconHammerOff, IconIcons, IconLeaf2, IconLock, IconLockAccess, IconPalette, IconPlant, IconRulerMeasure, IconShieldCheck, IconSparkles, IconSquaresSelected, IconTools } from "@tabler/icons-react";
 import { ArrowRightIcon, ArrowUpRight, Clock, MapPin, Store, Users } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -14,131 +14,218 @@ import { FormModalComponent } from "@/components/FormModalComponent";
 
 const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"] });
 
+// const products = [
+//   {
+//     title: "Modular Cleanroom Partitions",
+//     description:
+//       "Precision-engineered partitions that ensure controlled environments with seamless modular design.",
+//     href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Cleanroom+Partitions",
+//   },
+//   {
+//     title: "Metal Doorsets",
+//     description:
+//       "High-strength metal doors crafted for durability, safety, and sleek architectural appeal.",
+//     href: "/products?category=Fire+Rated+Doors&subCategory=Steel&subSubCategory=Single+Glazed",
+//   },
+//   {
+//     title: "Cleanroom Equipment",
+//     description:
+//       "Advanced equipment designed to maintain hygiene, efficiency, and contamination control.",
+//     href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Cleanroom+Equipment",
+//   },
+//   {
+//     title: "Office Partitions",
+//     description:
+//       "Smart, space-efficient partition systems that enhance privacy and modern office aesthetics.",
+//     href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Office+Partitions",
+//   },
+//   {
+//     title: "Lab Furniture",
+//     description:
+//       "Ergonomic, chemical-resistant lab furniture built for performance and precision.",
+//     href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Lab+Furniture",
+//   },
+//   {
+//     title: "Modular Kitchens",
+//     description:
+//       "Elegant and functional kitchen solutions customized for style and convenience.",
+//     href: "/",
+//   },
+//   {
+//     title: "Modular Wardrobe Furniture",
+//     description:
+//       "Space-optimized wardrobe systems tailored for modern living.",
+//     href: "/",
+//   },
+//   {
+//     title: "Fire Doors",
+//     description:
+//       "Certified fire-rated doors designed to protect life and property with proven reliability.",
+//     href: "/products?category=Fire+Rated+Doors&subCategory=Wooden&subSubCategory=Laminate",
+//   },
+// ];
+
 const products = [
   {
-    title: "Modular Cleanroom Partitions",
+    title: "Modular Kitchen",
     description:
-      "Precision-engineered partitions that ensure controlled environments with seamless modular design.",
-    href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Cleanroom+Partitions",
+      "Stylish, space-efficient modular kitchen designs crafted for maximum functionality and modern aesthetics.",
+    href: "/products?category=Interiors&subCategory=Kitchen&subSubCategory=Modular+Kitchen",
+    image:
+      "https://images.unsplash.com/photo-1654176154397-3133364f22e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Metal Doorsets",
+    title: "TV Cabinets",
     description:
-      "High-strength metal doors crafted for durability, safety, and sleek architectural appeal.",
-    href: "/products?category=Fire+Rated+Doors&subCategory=Steel&subSubCategory=Single+Glazed",
+      "Contemporary TV units that blend storage, elegance, and smart space utilization for your living room.",
+    href: "/products?category=Interiors&subCategory=Living+Room&subSubCategory=TV+Cabinets",
+    image:
+      "https://images.unsplash.com/photo-1586024486164-ce9b3d87e09f?q=80&w=1578&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Cleanroom Equipment",
+    title: "Wardrobes",
     description:
-      "Advanced equipment designed to maintain hygiene, efficiency, and contamination control.",
-    href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Cleanroom+Equipment",
+      "Custom-built wardrobe solutions offering optimal storage, seamless layouts, and premium finishes.",
+    href: "/products?category=Interiors&subCategory=Bedroom&subSubCategory=Wardrobes",
+    image:
+      "https://images.unsplash.com/photo-1672137233327-37b0c1049e77?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Office Partitions",
+    title: "Bathrooms",
     description:
-      "Smart, space-efficient partition systems that enhance privacy and modern office aesthetics.",
-    href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Office+Partitions",
-  },
-  {
-    title: "Lab Furniture",
-    description:
-      "Ergonomic, chemical-resistant lab furniture built for performance and precision.",
-    href: "/products?category=Panels+%26+Partitions&subCategory=&subSubCategory=Lab+Furniture",
-  },
-  {
-    title: "Modular Kitchens",
-    description:
-      "Elegant and functional kitchen solutions customized for style and convenience.",
-    href: "/",
-  },
-  {
-    title: "Modular Wardrobe Furniture",
-    description:
-      "Space-optimized wardrobe systems tailored for modern living.",
-    href: "/",
-  },
-  {
-    title: "Fire Doors",
-    description:
-      "Certified fire-rated doors designed to protect life and property with proven reliability.",
-    href: "/products?category=Fire+Rated+Doors&subCategory=Wooden&subSubCategory=Laminate",
+      "Elegant and functional bathroom interiors designed with premium materials and modern sanitary fittings.",
+    href: "/products?category=Interiors&subCategory=Bathroom&subSubCategory=Modern+Bathrooms",
+    image:
+      "https://images.unsplash.com/photo-1722858810036-e917b4dd3f3f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
+// const features = [
+//   {
+//     title: "Termite Free",
+//     icon: IconBugOff,
+//     description:
+//       "Built to resist termites and ensure long-lasting protection for your spaces",
+//   },
+//   {
+//     title: "Fire Resistant",
+//     icon: IconFlameOff,
+//     description:
+//       "Designed with advanced materials to withstand high temperatures & enhance safety",
+//   },
+//   {
+//     title: "Durable",
+//     icon: IconShieldCheck,
+//     description:
+//       "Engineered for strength and longevity, performing flawlessly for years",
+//   },
+//   {
+//     title: "Eco Friendly",
+//     icon: IconPlant,
+//     description:
+//       "Crafted using sustainable materials with minimal environmental impact",
+//   },
+//   {
+//     title: "Maintenance Free",
+//     icon: IconHammerOff,
+//     description:
+//       "Enjoy hassle-free performance without the need for frequent upkeep",
+//   },
+//   {
+//     title: "Design Flexibility",
+//     icon: IconBrush,
+//     description:
+//       "Customizable designs to match every architectural style and requirement",
+//   },
+//   {
+//     title: "Multi Finish",
+//     icon: IconSquaresSelected,
+//     description:
+//       "Available in a wide range of premium textures and finishes",
+//   },
+//   {
+//     title: "Fully Flush & Flat Surface",
+//     icon: IconFlare,
+//     description:
+//       "Smooth, seamless surfaces that offer a sleek modern look",
+//   },
+//   {
+//     title: "Security",
+//     icon: IconLockAccess,
+//     description:
+//       "Enhanced locking systems and sturdy construction for complete peace of mind",
+//   },
+//   {
+//     title: "Aesthetic Appeal",
+//     icon: IconLeaf2,
+//     description:
+//       "Perfect blend of functionality and style to elevate any space",
+//   },
+//   {
+//     title: "Versatility",
+//     icon: IconIcons,
+//     description:
+//       "Ideal for homes, offices, hotels, and commercial establishments alike",
+//   },
+//   {
+//     title: "Interlocking System",
+//     icon: IconLock,
+//     description:
+//       "Precision-engineered joints for superior strength and stability",
+//   },
+// ];
+
 const features = [
   {
-    title: "Termite Free",
-    icon: IconBugOff,
+    title: "Custom Built Designs",
+    icon: IconRulerMeasure,
     description:
-      "Built to resist termites and ensure long-lasting protection for your spaces",
+      "Every kitchen, wardrobe, TV unit, and bathroom is tailored to your exact space and style.",
   },
   {
-    title: "Fire Resistant",
-    icon: IconFlameOff,
+    title: "Premium Materials",
+    icon: IconDiamond,
     description:
-      "Designed with advanced materials to withstand high temperatures & enhance safety",
+      "High-quality boards, laminates, fittings, and hardware ensure long-lasting luxury.",
   },
   {
-    title: "Durable",
-    icon: IconShieldCheck,
+    title: "Soft-Close Mechanisms",
+    icon: IconArrowAutofitDown,
     description:
-      "Engineered for strength and longevity, performing flawlessly for years",
+      "Smooth and silent soft-close hinges & channels for a refined user experience.",
   },
   {
-    title: "Eco Friendly",
-    icon: IconPlant,
+    title: "Space Optimization",
+    icon: IconBoxMultiple,
     description:
-      "Crafted using sustainable materials with minimal environmental impact",
+      "Smart layouts and modular storage maximize every inch of your home.",
   },
   {
-    title: "Maintenance Free",
-    icon: IconHammerOff,
+    title: "Water & Moisture Resistant",
+    icon: IconDroplets,
     description:
-      "Enjoy hassle-free performance without the need for frequent upkeep",
+      "Bathroom and kitchen units built to resist humidity and everyday splashes.",
   },
   {
-    title: "Design Flexibility",
-    icon: IconBrush,
+    title: "Easy to Clean",
+    icon: IconSparkles,
     description:
-      "Customizable designs to match every architectural style and requirement",
+      "Surfaces designed for low maintenance and effortless daily cleaning.",
   },
   {
-    title: "Multi Finish",
-    icon: IconSquaresSelected,
+    title: "Modern Aesthetics",
+    icon: IconPalette,
     description:
-      "Available in a wide range of premium textures and finishes",
+      "Minimalist, contemporary, and luxurious designs that elevate the visual appeal.",
   },
   {
-    title: "Fully Flush & Flat Surface",
-    icon: IconFlare,
+    title: "Expert Installation",
+    icon: IconTools,
     description:
-      "Smooth, seamless surfaces that offer a sleek modern look",
-  },
-  {
-    title: "Security",
-    icon: IconLockAccess,
-    description:
-      "Enhanced locking systems and sturdy construction for complete peace of mind",
-  },
-  {
-    title: "Aesthetic Appeal",
-    icon: IconLeaf2,
-    description:
-      "Perfect blend of functionality and style to elevate any space",
-  },
-  {
-    title: "Versatility",
-    icon: IconIcons,
-    description:
-      "Ideal for homes, offices, hotels, and commercial establishments alike",
-  },
-  {
-    title: "Interlocking System",
-    icon: IconLock,
-    description:
-      "Precision-engineered joints for superior strength and stability",
+      "Professionally measured, delivered, and installed with precision and care.",
   },
 ];
+
 
 export default function Home() {
 
@@ -162,12 +249,12 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 max-w-7xl w-full">
             <div className="flex flex-col sm:flex-row w-full justify-between gap-4">
-              <div className="flex flex-col gap-4 w-full">
+              <div className="flex flex-col gap-4 w-full text-center">
                 <div className="text-red-500 text-md">PRODUCTS</div>
                 <div className={`${libre.className} font-semibold text-2xl md:text-3xl`}>We Value Quality, Admire <br /> Sustainability, Embrace Innovation.</div>
               </div>
 
-              <a
+              {/* <a
                 href="/products"
                 className="group flex gap-2 items-center bg-red-500 hover:bg-red-600 text-white px-4 py-2 whitespace-nowrap self-start"
               >
@@ -176,12 +263,12 @@ export default function Home() {
                   size={20}
                   className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
                 />
-              </a>
+              </a> */}
 
 
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 md:gap-4">
 
               {products.map((product, index) => (
                 <div
@@ -208,7 +295,58 @@ export default function Home() {
                 </div>
               ))}
 
+            </div> */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+              {products.map((product, index) => (
+                <div
+                  key={index}
+                  className="relative h-[400px] group overflow-hidden"
+                  style={{
+                    backgroundImage: `url(${product.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  {/* Static Title */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <h3 className="text-4xl font-semibold text-white drop-shadow-lg">
+                      {product.title}
+                    </h3>
+                  </div>
+
+                  {/* Overlay – visible by default on mobile, transitions only on sm+ */}
+                  <div
+                    className="
+          absolute inset-0
+          bg-black/40                   /* Always visible on mobile */
+          sm:bg-black/0                 /* Reset for desktop */
+          sm:group-hover:bg-black/60    /* Hover effect on desktop */
+          sm:transition-colors sm:duration-300
+          flex flex-col justify-end
+          p-4
+        "
+                  >
+                    {/* Description – visible by default on mobile */}
+                    <div
+                      className="
+            opacity-100                  /* Always visible on mobile */
+            sm:opacity-0                 /* Hidden on desktop initially */
+            sm:group-hover:opacity-100   /* Fade in on hover desktop */
+            sm:transition-opacity sm:duration-300
+            text-white space-y-3
+          "
+                    >
+                      <p className="text-xl font-semibold pr-16">
+                        {product.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+
+
           </div>
         </div>
 
@@ -235,7 +373,7 @@ export default function Home() {
                 aria-label="Vipul Motors anniversary image"
                 className="w-full h-64 sm:flex-1 bg-cover bg-left"
                 style={{
-                  backgroundImage: `url('/about-image-1.webp')`,
+                  backgroundImage: `url('https://images.unsplash.com/photo-1723470915155-621e10d20dfa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
                 }}
               >
                 {/* screen-reader text (optional) */}

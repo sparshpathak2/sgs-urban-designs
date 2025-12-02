@@ -26,7 +26,7 @@ export default function HeroCarousel() {
 
     return (
         <div
-            className={`relative w-full mx-auto overflow-hidden ${isMobile ? "aspect-[360/283]" : "aspect-[1366/523]"
+            className={`relative w-full mx-auto overflow-hidden ${isMobile ? "aspect-[360/400]" : "aspect-[1366/600]"
                 }`}
         >
             {loading ? (

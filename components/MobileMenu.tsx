@@ -44,16 +44,12 @@ const MobileMenu = () => {
             </button>
 
             {open && (
-                // <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md py-2 z-50">
-                // <div className="absolute right-[-8px] mt-2 w-screen bg-white shadow-lg py-2 z-50 h-screen border-t border-black">
-                // <div className="fixed flex flex-col justify-between top-18 left-0 w-screen h-screen bg-white shadow-lg z-50">
                 <div
                     className="fixed flex flex-col top-18 left-0 w-screen bg-white shadow-lg z-50 overflow-y-auto gap-4"
                     style={{ height: 'calc(100vh - 4.5rem)' }} // 4.5rem = h-18 = 72px
                 >
                     <div className='flex flex-col w-full'>
-                        {/* <div className="border-b border-gray-200"> */}
-                        <div className="">
+                        {/* <div>
                             <button
                                 onClick={() => setProductsOpen(!productsOpen)}
                                 className="w-full text-left px-4 py-3 hover:bg-gray-100 flex justify-between items-center border-b border-gray-200"
@@ -67,7 +63,6 @@ const MobileMenu = () => {
 
                             {productsOpen && (
                                 <div className="bg-white">
-                                    {/* Fire Rated Doors */}
                                     <button
                                         onClick={() => setFireDoorsOpen(!fireDoorsOpen)}
                                         className="w-full text-left pl-6 pr-4 py-2 flex justify-between items-center hover:bg-gray-100 border-b border-gray-200"
@@ -91,7 +86,6 @@ const MobileMenu = () => {
                                         </div>
                                     )}
 
-                                    {/* Panels & Partitions */}
                                     <button
                                         onClick={() => setPanelsOpen(!panelsOpen)}
                                         className="w-full text-left pl-6 pr-4 py-2 flex justify-between items-center hover:bg-gray-100 border-b border-gray-200"
@@ -107,7 +101,6 @@ const MobileMenu = () => {
                                         </div>
                                     )}
 
-                                    {/* Modular Spaces */}
                                     <button
                                         onClick={() => setModularOpen(!modularOpen)}
                                         className="w-full text-left pl-6 pr-4 py-2 flex justify-between items-center hover:bg-gray-100 border-b border-gray-200"
@@ -124,7 +117,7 @@ const MobileMenu = () => {
                                     )}
                                 </div>
                             )}
-                        </div>
+                        </div> */}
 
                         <Link
                             href="/about-us"
