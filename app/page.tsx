@@ -413,7 +413,7 @@ export default function Home() {
               <div className="text-red-500 text-md">FEATURES</div>
               {/* <div className="font-semibold text-2xl md:text-3xl font-libre">We Value Quality, Admire <br /> Sustainability, Embrace Innovation.</div> */}
               <div className={`${libre.className} font-semibold text-2xl md:text-3xl`}>
-                Crafting every door with precision,<br /> tailored for your safety.
+                Designed for Comfort. Built for Life.
               </div>
             </div>
 
